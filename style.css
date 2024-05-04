@@ -1,0 +1,128 @@
+*,
+:after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100vh;
+  background-color: blueviolet;
+  display: grid;
+  place-items: center;
+}
+.wrapper {
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #fff;
+  width: 50%;
+  width: 320px;
+  color: blueviolet;
+}
+.area_content {
+  position: relative;
+  height: 120px;
+  margin: 0 0 15px;
+}
+.area,
+.read_only {
+  width: 100%;
+  height: 110px;
+  max-height: 150px;
+  padding: 10px;
+  border: 1px solid #eee;
+  overflow-y: auto;
+  z-index: 5;
+  color: #000;
+  cursor: pointer;
+}
+.area::-webkit-scrollbar {
+  width: 0px;
+}
+.read_only {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  word-wrap: break-word;
+  word-break: break-all;
+  background-color: transparent;
+  color: transparent;
+  z-index: -1;
+}
+.higlight {
+  background-color: rgba(249, 2, 2, 0.422);
+  color: black;
+}
+.placeholder {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+.placeholder.hide {
+  display: none;
+}
+.reply {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0 15px;
+  padding: 0 0 15px;
+  border-bottom: 1px solid #ddd;
+}
+.tweet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.icons i {
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 20px;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.icons i:hover {
+  background-color: #eee;
+}
+.tweet_box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.count {
+  padding: 0 8px;
+  border-right: 1px solid #ddd;
+  display: none;
+}
+.count.active {
+  display: block;
+}
+.btn_tweet {
+  padding: 5px 12px;
+  border-radius: 6px;
+  background-color: blueviolet;
+  color: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.wrapper.active .btn_tweet {
+  opacity: 1;
+}
